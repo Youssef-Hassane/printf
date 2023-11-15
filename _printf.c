@@ -7,8 +7,16 @@
 #include "Buffer/Display_The_Buffer.c"
 #include "Buffer/Combines_Buffer.c"
 #include "Buffer/Write_Buffer_To_Stdout.c"
-
-
+#include "Specifier/Handling_Character_Specifier.c"
+#include "Specifier/Handling_String_Specifier.c"
+#include "Specifier/Handling_Integer_Specifier.c"
+#include "Specifier/Handling_Percent_Sign_Specifier.c"
+#include "Specifier/Handling_Binary_Number.c"
+#include "Specifier/Handling_Unsigned_Integer_Specifier.c"
+#include "Specifier/Handling_Hexadecimal_Number.c"
+#include "Specifier/Handling_Hexadecimal_Number_Upper.c"
+#include "Specifier/Handling_Octal_Number.c"
+#include "Specifier/Handling_Rot13_Specifier.c"
 
 /**
  * _printf - Custom implementation of the printf function.
@@ -20,7 +28,7 @@
  * ----------------------
  * @format: The format string containing format specifiers.
  * ----------------------
- * By Youssef Hassane
+ * By Youssef Hassane & Ahmed Abdelhamid
  */
 
 int _printf(const char *format, ...)
@@ -43,4 +51,25 @@ int _printf(const char *format, ...)
 		free(theBuffer); /* Return failure if memory allocation fails */
 		exit(1);
 	}
+	if (Input_Validation_Condition(format))
+	{
+		return (-1);
+	}
+	/* Check for an empty format string */
+	if (!format[0])
+	{
+		/* Return success if the format string is empty */
+		return (0);
+	}
+	va_start(theArgs, format); /* Start the variable argument processing */
+	/* Process the format string and store the result in the buffer */
+	length = Format_Specifier_Processing_Loop(
+		format, theBuffer, &theIndexOfTheBuffer,
+		&length, theArgs);
+	/* Display the content of the buffer */
+	Display_The_Buffer(theBuffer, theIndexOfTheBuffer);
+	free(theBuffer); /* Free the allocated memory for the buffer */
+	va_end(theArgs); /* End variable argument processing */
+	/* Return the number of characters printed */
+	return (length);
 }
