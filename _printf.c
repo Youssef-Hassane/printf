@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 	length = Format_Specifier_Processing_Loop(
 		format, theBuffer, &theIndexOfTheBuffer,
 		&length, theArgs);
-	/* Display the content of the buffer */
+	/* Display all the content of the buffer */
 	Display_The_Buffer(theBuffer, theIndexOfTheBuffer);
 	free(theBuffer); /* Free the allocated memory for the buffer */
 	va_end(theArgs); /* End variable argument processing */
