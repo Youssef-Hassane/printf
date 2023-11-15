@@ -117,7 +117,6 @@ int Find_Matching_Function_Index(
 	int *index_1, int *index_2,
 	const print_t *functions);
 
-/*------------------------------*/
 int Handling_Binary_Specifier(
 	va_list theArgs,
 	char *theBuffer,
@@ -127,9 +126,6 @@ int Handling_Binary_Number(
 	va_list theArgs,
 	char *theBuffer,
 	unsigned int theIndexOfTheBuffer);
-
-
-/*------------------------------*/
 
 void printBinaryDigits(char *binaryRepresentation, char *theBuffer,
 	unsigned int *theIndexOfTheBuffer,
