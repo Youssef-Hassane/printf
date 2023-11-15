@@ -118,5 +118,68 @@ int Find_Matching_Function_Index(
 	const print_t *functions);
 
 /*------------------------------*/
+int Handling_Binary_Specifier(
+	va_list theArgs,
+	char *theBuffer,
+	unsigned int numberOfBytesToPrint);
+
+int Handling_Binary_Number(
+	va_list theArgs,
+	char *theBuffer,
+	unsigned int theIndexOfTheBuffer);
+
+
+/*------------------------------*/
+
+void printBinaryDigits(char *binaryRepresentation, char *theBuffer,
+	unsigned int *theIndexOfTheBuffer,
+	int *theNumberOfCharactersPrinted, int *firstOne, int *index);
+
+int Handling_Binary_Number(va_list theArgs, char *theBuffer,
+	unsigned int theIndexOfTheBuffer);
+
+char *Generate_Binary_Representation(
+	char *binaryRepresentation, long int theGivenNumber,
+	int isNegative, int theLimitOfBinary);
+
+char *Generate_Binary_Representation_2(
+	char *binaryRepresentation, long int theGivenNumber,
+	int isNegative, int theLimitOfBinary);
+
+int Handling_Unsigned_Integer_Specifier(
+	va_list args, char *buffer, unsigned int index);
+
+int Generate_Unsigned_Integer_Digits(
+	unsigned int number, char *theBuffer, unsigned int *theIndexOfTheBuffer);
+
+int Handling_Hexadecimal_Number(
+	va_list theArgs,
+	char *theBuffer,
+	unsigned int theIndexOfTheBuffer);
+
+char *Generate_Hexadecimal_Representation(
+	char *binaryArray, char *hexArray,
+	int isUppercase, int hexArraySize);
+
+int Handling_Hexadecimal_Number_Upper(
+	va_list theArgs,
+	char *theBuffer,
+	unsigned int theIndexOfTheBuffer);
+char *Generate_Binary_Representation_3(
+	char *binaryRepresentation, long int theGivenNumber,
+	int isNegative, int theLimitOfBinary);
+
+char *Generate_Hexadecimal_Representation_2(
+	char *binaryArray, char *hexArray,
+	int isUppercase, int hexArraySize);
+
+int Handling_Rot13_Specifier(va_list theArgs,
+		char *theBuffer,
+		unsigned int numberOfBytesToPrint);
+
+int Handling_Octal_Number(
+	va_list theArgs,
+	char *theBuffer,
+	unsigned int theIndexOfTheBuffer);
 
 #endif
