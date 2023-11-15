@@ -26,7 +26,14 @@ unsigned int Combines_Buffer(
 	char character,
 	unsigned int numberOfBytesToPrint)
 {
-
+	/* Check if the buffer is full */
+	/* BUFFERSIZE = 1024*/
+	if (numberOfBytesToPrint == BUFFERSIZE)
+	{
+		/* Display the buffer content and reset the count */
+		Display_The_Buffer(theBuffer, numberOfBytesToPrint);
+		numberOfBytesToPrint = 0;
+	}
 	/* Append the character to the buffer and increment the count */
 	theBuffer[numberOfBytesToPrint] = character;
 	numberOfBytesToPrint++;

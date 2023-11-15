@@ -3,7 +3,11 @@
 This repository contains a custom implementation of the `printf` function in C, which meets the specifications outlined in the project requirements. The `printf` function is a widely used standard library function in C that performs formatted output. The objective of this project is to develop a simplified version of this function.
 
 ## Task 0
-Write a function that produces output according to a format.
+Write## Task 0
+
+
+## Task 1
+ a function that produces output according to a format.
 
 - Prototype: int _printf(const char *format, ...);
 - Returns: the number of characters printed (excluding the null byte used to end output to strings)
